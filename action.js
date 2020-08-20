@@ -121,7 +121,7 @@ module.exports = class {
       
       console.log('Found diff, res)
       
-      const rx = /^\+.*(?:\/\/|#)\s*TODO:(.*)$/gmi
+      const rx = /^\+.*(?:\/\/|#|\*)\s*TODO:(.*)$/gmi
       return getMatches(res, rx, 1)
         .map(_.trim)
         .filter(Boolean)
