@@ -29,7 +29,8 @@ module.exports = class {
 
     if (githubEvent.commits && githubEvent.commits.length > 0) {
       tasks = _.flatten(await this.findTodoInCommits(githubEvent.repository, githubEvent.commits))
-    }
+    } else {
+      console.log("No commits found!")
 
     if (tasks.length === 0) {
       console.log('no TODO found')
